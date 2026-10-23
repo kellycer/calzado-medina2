@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre calzado deportivo increíble en Calzado Deportivo Medina. Consulta nuestro catálogo y haz tu pedido por WhatsApp.">
+  <title>Calzado Deportivo Medina | Tienda en línea</title>
+
+  <style>
+    /* ==========================================
+       VARIABLES DE COLOR (MODO CLARO Y OSCURO)
+       ========================================== */
+    :root {
+      /* MODO CLARO: Azules claros, frescos y luminosos */
+      --bg-body: #f4f8fb;
+      --bg-header: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --card-bg: #ffffff;
+      --card-border: #dbeafe;
+      --input-bg: #f8fafc;
+      --input-border: #93c5fd;
+      --input-text: #0f172a;
+      
+      /* Azules claros para elementos visuales */
+      --primary-blue: #3b82f6;
+      --primary-blue-hover: #2563eb;
+      --hero-gradient-1: #60a5fa;
+      --hero-gradient-2: #2563eb;
+      --hero-text: #ffffff;
+      --hero-subtext: #eff6ff;
+      --hero-span: #0b1c3d; /* Azul marino muy oscuro para resaltar en modo claro */
+      
+      --footer-bg: #1e40af;
+      --footer-text: #dbeafe;
+    }
+
+    [data-theme="dark"] {
+      /* MODO OSCURO: Azules profundos y oscuros */
+      --bg-body: #070d1d;
+      --bg-header: #0f172a;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --card-bg: #0f172a;
+      --card-border: #1e293b;
+      --input-bg: #111c38;
+      --input-border: #2a3d66;
+      --input-text: #f8fafc;
+      
+      /* Azules oscuros para elementos visuales */
+      --primary-blue: #1d4ed8;
+      --primary-blue-hover: #1e40af;
+      --hero-gradient-1: #0f172a;
+      --hero-gradient-2: #1e3a8a;
+      --hero-text: #ffffff;
+      --hero-subtext: #cbd5e1;
+      --hero-span: #60a5fa; /* Azul claro para resaltar en modo oscuro */
+      
+      --footer-bg: #050b14;
+      --footer-text: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* BARRA DE AVISO Y ENCABEZADO */
+    .aviso {
+      background: var(--primary-blue);
+      color: #ffffff;
+      text-align: center;
+      padding: 9px 10px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    header {
+      background: var(--bg-header);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navegacion {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .menu a {
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .menu a:hover {
+      color: var(--primary-blue);
+    }
+
+    /* BOTÓN DE TEMA (CLARO / OSCURO) */
+    .boton-tema {
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      color: var(--text-main);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      transition: transform 0.2s;
+    }
+
+    .boton-tema:hover {
+      transform: scale(1.1);
+    }
+
+    /* BOTONES GENERALES */
+    .boton {
+      display: inline-block;
+      padding: 11px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    }
+
+    .boton:active {
+      transform: scale(0.98);
+    }
+
+    .boton-rosa {
+      background: var(--primary-blue);
+      color: #fff;
+    }
+
+    .boton-rosa:hover {
+      background: var(--primary-blue-hover);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .boton-verde {
+      background: #16a34a;
+      color: #fff;
+    }
+
+    .boton-verde:hover {
+      background: #15803d;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+    }
+
+    /* SECCIÓN PORTADA (HERO) */
+    .portada {
+      background: linear-gradient(135deg, var(--hero-gradient-1), var(--hero-gradient-2));
+      color: var(--hero-text);
+      padding: 65px 0;
+    }
+
+    .portada-interior {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .etiqueta {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--hero-text);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      display: inline-block;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+    }
+
+    .portada h1 {
+      font-size: clamp(28px, 3.8vw, 42px);
+      color: var(--hero-text);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .portada h1 span {
+      color: var(--hero-span);
+    }
+
+    .portada p {
+      margin-bottom: 26px;
+      color: var(--hero-subtext);
+      font-size: 16px;
+    }
+
+    .portada-imagen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      border-radius: 24px;
+      backdrop-filter: blur(8px);
+      min-height: 260px;
+    }
+
+    .portada-imagen img {
+      max-width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    /* SECCIÓN CATÁLOGO */
+    #catalogo {
+      padding: 65px 0;
+    }
+
+    .encabezado-seccion {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .encabezado-seccion h2 {
+      font-size: 34px;
+      color: var(--text-main);
+    }
+
+    .encabezado-seccion p {
+      color: var(--text-muted);
+    }
+
+    .herramientas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: space-between;
+      margin-bottom: 35px;
+    }
+
+    .buscador {
+      flex: 1;
+      min-width: 260px;
+      padding: 13px 18px;
+      border: 1px solid var(--input-border);
+      border-radius: 10px;
+      font-size: 15px;
+      background: var(--input-bg);
+      color: var(--input-text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .buscador:focus {
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .filtros {
+      display: flex;
+      gap: 10px;
+    }
+
+    .filtro {
+      padding: 11px 20px;
+      border: 1px solid var(--primary-blue);
+      background: var(--card-bg);
+      color: var(--primary-blue);
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filtro.activo,
+    .filtro:hover {
+      background: var(--primary-blue);
+      color: #ffffff;
+    }
+
+    /* TARJETAS DE PRODUCTOS */
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .producto {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .producto:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(59, 130, 246, 0.15);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background-color: var(--input-bg);
+    }
+
+    .producto-info {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .producto-info .categoria {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--primary-blue);
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+
+    .producto-info h3 {
+      font-size: 19px;
+      margin: 8px 0;
+      color: var(--text-main);
+    }
+
+    .producto-info .descripcion {
+      font-size: 14px;
+      color: var(--text-muted);
+      flex-grow: 1;
+      margin-bottom: 12px;
+    }
+
+    .producto-info .selector-talla {
+      margin-bottom: 15px;
+    }
+
+    .producto-info .selector-talla label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .producto-info .selector-talla select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--input-border);
+      border-radius: 8px;
+      background: var(--input-bg);
+      color: var(--input-text);
+      font-size: 14px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .producto-info .selector-talla select:focus {
+      border-color: var(--primary-blue);
+    }
+
+    .producto-info .precio {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 16px;
+    }
+
+    /* SECCIÓN DE CONTACTO */
+    .contacto {
+      background: linear-gradient(135deg, var(--hero-gradient-1), var(--hero-gradient-2));
+      color: #ffffff;
+      padding: 65px 0;
+    }
+
+    .contacto .encabezado-contacto {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .contacto .encabezado-contacto h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 12px;
+    }
+
+    .contacto .encabezado-contacto p {
+      color: var(--hero-subtext);
+    }
+
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .contacto-info,
+    .contacto-formulario {
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .contacto-info {
+      background: var(--bg-header);
+      color: var(--text-main);
+    }
+
+    .contacto-info h3,
+    .contacto-formulario h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .contacto-info p {
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .dato-contacto {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin: 24px 0;
+    }
+
+    .icono-contacto {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 43px;
+      height: 43px;
+      background: var(--input-bg);
+      border-radius: 12px;
+      color: var(--primary-blue);
+      font-size: 22px;
+    }
+
+    .dato-contacto strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .dato-contacto span {
+      color: var(--text-muted);
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .redes-contacto {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .redes-contacto a {
+      background: var(--primary-blue);
+      padding: 11px 16px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .redes-contacto a:hover {
+      background: var(--primary-blue-hover);
+    }
+
+    .contacto-formulario {
+      background: var(--card-bg);
+      color: var(--text-main);
+    }
+
+    .contacto-formulario label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 16px 0 7px;
+    }
+
+    .contacto-formulario input,
+    .contacto-formulario select,
+    .contacto-formulario textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid var(--input-border);
+      border-radius: 9px;
+      background: var(--input-bg);
+      color: var(--input-text);
+    }
+
+    .contacto-formulario textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .contacto-formulario input:focus,
+    .contacto-formulario select:focus,
+    .contacto-formulario textarea:focus {
+      outline: 2px solid var(--primary-blue);
+      outline-offset: 1px;
+    }
+
+    .boton-contacto {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      background: var(--primary-blue);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.2s;
+    }
+
+    .boton-contacto:hover {
+      background: var(--primary-blue-hover);
+    }
+
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      padding: 28px 0;
+      font-size: 14px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+
+    @media (max-width: 750px) {
+      .portada-interior,
+      .contacto-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contacto-info,
+      .contacto-formulario {
+        padding: 20px;
+      }
+
+      .navegacion {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="aviso">
+     ¡Bienvenid@! Descubre tu calzado deportivo favorito. 
+  </div>
+
+  <header>
+    <div class="contenedor navegacion">
+      <a href="#inicio" class="logo">👟 Calzado Deportivo Medina</a>
+
+      <nav class="menu" aria-label="Menú principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#contacto">Contacto</a>
+        <button class="boton-tema" id="cambiar-tema" aria-label="Cambiar modo oscuro/claro">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="portada" id="inicio">
+      <div class="contenedor portada-interior">
+        <div>
+          <h1>Avanza con confianza, llega a donde quieras con <span>Calzado Deportivo Medina</span></h1>
+          <p>
+            Tenemos el calzado deportivo perfecto para jóvenes y adultos.
+            Comodidad, resistencia y el mejor diseño en un solo lugar. 
+            Explora nuestro catálogo y pide tus favoritos de una manera fácil y rápida.
+          </p>
+          <a href="#catalogo" class="boton boton-rosa">
+            Explorar catálogo →
+          </a>
+        </div>
+
+        <div class="portada-imagen">
+          <img src="C:\Users\kcerv\OneDrive\Escritorio\CalzadoDeportivo\1000507424.png" alt="Logo Calzado Deportivo Medina">
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo">
+      <div class="contenedor">
+        <div class="encabezado-seccion">
+          <h2>🛍️ Nuestro catálogo</h2>
+          <p>Encuentra tu calzado ideal y pídelo al instante por WhatsApp.</p>
+        </div>
+
+        <div class="herramientas">
+          <input
+            class="buscador"
+            id="buscador"
+            type="search"
+            placeholder="Buscar un producto..."
+            aria-label="Buscar productos"
+          >
+
+          <div class="filtros" aria-label="Filtrar por categoría">
+            <button class="filtro activo" data-categoria="todos">Todos</button>
+          </div>
+        </div>
+
+        <div class="productos" id="productos"></div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="contenedor">
+
+        <div class="encabezado-contacto">
+          <h2>¡Hola! Bienvenid@ a Calzado Deportivo Medina 👟</h2>
+          <p>
+            ¿Tienes dudas sobre tallas, modelos o disponibilidad?
+            Te responderemos en un momento. ¡Gracias por tu paciencia! 🙌
+          </p>
+        </div>
+
+        <div class="contacto-grid">
+
+          <!-- INFORMACIÓN DEL NEGOCIO -->
+          <div class="contacto-info">
+            <h3>Calzado Deportivo Medina</h3>
+            <p>Tu próximo par de tenis está aquí.</p>
+
+            <div class="dato-contacto">
+              <div class="icono-contacto">✆</div>
+              <div>
+                <strong>WhatsApp Business</strong>
+                <span>Atención y pedidos al número 7361119796</span>
+              </div>
+            </div>
+
+            <div class="dato-contacto">
+              <div class="icono-contacto">◷</div>
+              <div>
+                <strong>Horario de atención</strong>
+                <span>Lunes a sábado · 10:00 am - 6:00 pm</span>
+              </div>
+            </div>
+
+            <div class="dato-contacto">
+              <div class="icono-contacto">⌖</div>
+              <div>
+                <strong>Ubicación</strong>
+                <span>Pasillo 12B, Mercado Municipal "Adrián Castrejón", Iguala de la independencia, Gro.</span>
+              </div>
+            </div>
+
+            <div class="redes-contacto">
+              <a href="https://www.facebook.com/profile.php?id=100080529738143" id="facebook-link">Facebook</a> <!-- Link del Feis JSAKJSA -->
+            </div>
+          </div>
+
+          <!-- FORMULARIO DE CONTACTO -->
+          <form class="contacto-formulario" id="formulario-contacto">
+            <h3>Envíanos un mensaje</h3>
+            <p>Completa tus datos y continúa por WhatsApp.</p>
+
+            <label for="nombre-cliente">Nombre completo *</label>
+            <input
+              id="nombre-cliente"
+              name="nombre"
+              type="text"
+              placeholder="Escribe tu nombre"
+              autocomplete="name"
+              required
+            >
+
+            <label for="telefono-cliente">Teléfono de contacto *</label>
+            <input
+              id="telefono-cliente"
+              name="telefono"
+              type="tel"
+              placeholder="Tu número de teléfono"
+              autocomplete="tel"
+              required
+            >
+
+            <label for="motivo">Motivo de consulta *</label>
+            <select id="motivo" name="motivo" required>
+              <option value="Información de productos">
+                Información de productos
+              </option>
+              <option value="Consulta de tallas">
+                Consulta de tallas
+              </option>
+              <option value="Disponibilidad de modelos">
+                Disponibilidad de modelos
+              </option>
+              <option value="Precios y promociones">
+                Precios y promociones
+              </option>
+              <option value="Seguimiento de pedido">
+                Seguimiento de pedido
+              </option>
+              <option value="Otra consulta">
+                Otra consulta
+              </option>
+            </select>
+
+            <label for="mensaje-cliente">Mensaje *</label>
+            <textarea
+              id="mensaje-cliente"
+              name="mensaje"
+              placeholder="Cuéntanos qué modelo o producto buscas..."
+              required
+            ></textarea>
+
+            <button type="submit" class="boton-contacto">
+              Enviar mensaje vía WhatsApp →
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p>👟⚡ <strong>Calzado Deportivo Medina</strong> Avanza con confianza, llega a donde quieras.</p>
+      <p>© <span id="anio"></span> Calzado Deportivo Medina. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ==========================================
+    // 1. MODO OSCURO / CLARO
+    // ==========================================
+
+    const botonTema = document.getElementById("cambiar-tema");
+    const htmlElement = document.documentElement;
+
+    const temaGuardado = localStorage.getItem("theme") || "light";
+    htmlElement.setAttribute("data-theme", temaGuardado);
+    botonTema.textContent = temaGuardado === "dark" ? "☀️" : "🌙";
+
+    botonTema.addEventListener("click", () => {
+      const temaActual = htmlElement.getAttribute("data-theme");
+      const nuevoTema = temaActual === "dark" ? "light" : "dark";
+
+      htmlElement.setAttribute("data-theme", nuevoTema);
+      localStorage.setItem("theme", nuevoTema);
+      botonTema.textContent = nuevoTema === "dark" ? "☀️" : "🌙";
+    });
+
+    // ==========================================
+    // 2. DATOS DEL NEGOCIO Y CATÁLOGO
+    // ==========================================
+
+    const NOMBRE_TIENDA = "Calzado Deportivo Medina";
+    const WHATSAPP = "527361119796"; // Reemplaza con tu número de WhatsApp, IMPORTANTE: Respeta el 52 (Área telefonica de México)
+    const MONEDA = new Intl.NumberFormat("es-MX", {
+      style: "currency",
+      currency: "MXN"
+    });
+
+    const productos = [
+      {
+        id: 1,
+        nombre: " Converse rojo casual",
+        categoria: "Unisex",
+        precio: 499,
+        tallas: ["23 MX","23.5 MX", "24 MX", "24.5 MX", "25 MX", "25.5 MX", "26 MX", "26.5 MX", "27 MX"],
+        descripcion: "Estilo clásico de Converse",
+        imagen: "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 2,
+        nombre: "Tenis Running red Motion",
+        categoria: "Hombre",
+        precio: 349,
+        tallas: ["25 MX", "26 MX", "27 MX", "28 MX", "29 MX"],
+        descripcion: "Diseño ergonómico con malla transpirable y suela de alta amortiguación.",
+        imagen: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 3,
+        nombre: "Tenis Retro High White",
+        categoria: "Hombre",
+        precio: 399,
+        tallas: ["24 MX", "25 MX", "26 MX", "27 MX", "28 MX"],
+        descripcion: "Edición especial en tono azul universitario y detalles crema.",
+        imagen: "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 4,
+        nombre: "Tenis Sport Classic Navy",
+        categoria: "Mujer",
+        precio: 499,
+        tallas: ["23 MX","23.5 MX", "24 MX", "24.5 MX", "25 MX", "25.5 MX", "26 MX", "26.5 MX"],
+        descripcion: "Colores pasteles atractivos y materiales de alta durabilidad.",
+        imagen: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 5,
+        nombre: "Tenis Sport Nike Initiator",
+        categoria: "Mujer",
+        precio: 399,
+        tallas: ["23 MX","23.5 MX", "24 MX", "24.5 MX", "25 MX", "25.5 MX", "26 MX", "26.5 MX"],
+        descripcion: "Tenis deportivos de alta calidad. ",
+        imagen: "https://cdn5.coppel.com/pr/8975312-1.jpg?iresize=width:846,height:677"
+      },
+      {
+        id: 6,
+        nombre: "Tenis Sport On Cloudrift",
+        categoria: "Mujer",
+        precio: 599,
+        tallas: ["23 MX","23.5 MX", "24 MX", "24.5 MX", "25 MX", "25.5 MX", "26 MX", "26.5 MX"],
+        descripcion: "Suela de alta comodidad y buena durabilidad.",
+        imagen: "https://i.pinimg.com/736x/d6/aa/a4/d6aaa4f73fb42bcd02fc83c3ef440ed4.jpg"
+      },
+      {
+        id: 7,
+        nombre: "Autper Tenis deportivos",
+        categoria: "Hombre",
+        precio: 449,
+        tallas: ["24 MX", "25 MX", "26 MX", "27 MX", "28 MX"],
+        descripcion: "Autper Tenis deportivos ligeros para hombre, para correr, gimnasio, correr, caminar.",
+        imagen: "https://i.pinimg.com/736x/82/df/1d/82df1d1ce696e070a99e5419cead6b06.jpg"
+      },
+
+    ];
+
+    const contenedorProductos = document.getElementById("productos");
+    const buscador = document.getElementById("buscador");
+
+    document.getElementById("anio").textContent = new Date().getFullYear();
+
+    function mostrarProductos() {
+      const busqueda = buscador.value.trim().toLocaleLowerCase("es");
+
+      const filtrados = productos.filter(producto => {
+        const coincideCategoria =
+          categoriaActual === "todos" ||
+          producto.categoria === categoriaActual;
+
+        const coincideBusqueda =
+          producto.nombre.toLocaleLowerCase("es").includes(busqueda) ||
+          producto.descripcion.toLocaleLowerCase("es").includes(busqueda);
+
+        return coincideCategoria && coincideBusqueda;
+      });
+
+      contenedorProductos.replaceChildren();
+
+      if (filtrados.length === 0) {
+        const mensaje = document.createElement("p");
+        mensaje.className = "sin-resultados";
+        mensaje.textContent = "No encontramos productos con esa búsqueda.";
+        contenedorProductos.appendChild(mensaje);
+        return;
+      }
+
+      filtrados.forEach(producto => {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "producto";
+
+        const imagen = document.createElement("img");
+        imagen.src = producto.imagen;
+        imagen.alt = producto.nombre;
+        imagen.loading = "lazy";
+        imagen.onerror = () => {
+          imagen.removeAttribute("src");
+          imagen.alt = "Imagen no disponible";
+        };
+
+        const info = document.createElement("div");
+        info.className = "producto-info";
+
+        const categoria = document.createElement("span");
+        categoria.className = "categoria";
+        categoria.textContent = producto.categoria;
+
+        const nombre = document.createElement("h3");
+        nombre.textContent = producto.nombre;
+
+        const descripcion = document.createElement("p");
+        descripcion.className = "descripcion";
+        descripcion.textContent = producto.descripcion;
+
+        const divTalla = document.createElement("div");
+        divTalla.className = "selector-talla";
+
+        const labelTalla = document.createElement("label");
+        labelTalla.textContent = "Talla:";
+
+        const selectTalla = document.createElement("select");
+        selectTalla.id = "talla-" + producto.id;
+
+        producto.tallas.forEach(talla => {
+          const opcion = document.createElement("option");
+          opcion.value = talla;
+          opcion.textContent = talla;
+          selectTalla.appendChild(opcion);
+        });
+
+        divTalla.append(labelTalla, selectTalla);
+
+        const precio = document.createElement("p");
+        precio.className = "precio";
+        precio.textContent = MONEDA.format(producto.precio);
+
+        const boton = document.createElement("button");
+        boton.className = "boton boton-verde agregar";
+        boton.textContent = "Pedir por WhatsApp 💬";
+        boton.addEventListener("click", () => {
+          const tallaSeleccionada = selectTalla.value;
+          pedirIndividualWhatsApp(producto, tallaSeleccionada);
+        });
+
+        info.append(categoria, nombre, descripcion, divTalla, precio, boton);
+        tarjeta.append(imagen, info);
+        contenedorProductos.appendChild(tarjeta);
+      });
+    }
+
+    let categoriaActual = "todos";
+    buscador.addEventListener("input", mostrarProductos);
+
+    document.querySelectorAll(".filtro").forEach(boton => {
+      boton.addEventListener("click", () => {
+        categoriaActual = boton.dataset.categoria;
+
+        document.querySelectorAll(".filtro").forEach(filtro => {
+          const activo = filtro === boton;
+          filtro.classList.toggle("activo", activo);
+          filtro.setAttribute("aria-pressed", String(activo));
+        });
+
+        mostrarProductos();
+      });
+    });
+
+    function abrirWhatsApp(mensaje) {
+      if (!/^\d{10,15}$/.test(WHATSAPP)) {
+        alert("Configura el número de WhatsApp de la tienda en el código.");
+        return;
+      }
+
+      const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(mensaje);
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function pedirIndividualWhatsApp(producto, talla) {
+      let mensaje = "¡Hola! Quiero hacer un pedido en " + NOMBRE_TIENDA + ":\n\n";
+      mensaje += "• " + producto.nombre + " (Talla: " + talla + ") - " + MONEDA.format(producto.precio) + "\n\n";
+      mensaje += "¿Me pueden confirmar disponibilidad en tienda?";
+
+      abrirWhatsApp(mensaje);
+    }
+
+    document.getElementById("formulario-contacto").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre-cliente").value.trim();
+      const telefono = document.getElementById("telefono-cliente").value.trim();
+      const motivo = document.getElementById("motivo").value;
+      const mensaje = document.getElementById("mensaje-cliente").value.trim();
+
+      if (!nombre || !telefono || !mensaje) {
+        alert("Por favor, completa todos los campos.");
+        return;
+      }
+
+      const texto =
+        "Hola, soy " + nombre + ".\n" +
+        "Mi teléfono: " + telefono + "\n" +
+        "Motivo de consulta: " + motivo + "\n" +
+        "Mensaje: " + mensaje;
+
+      abrirWhatsApp(texto);
+    });
+
+    mostrarProductos();
+  </script>
+</body>
+</html>
